@@ -1,4 +1,4 @@
-.## How to Contribute your code
+### How to Contribute your code
 1.Fork this Repo
 2.Clone it to your PC by "git clone repo-address"
 3.Go to the folder by "cd folder-name"
