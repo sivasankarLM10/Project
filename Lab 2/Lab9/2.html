@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        th,td{
+            background-color:limegreen;
+            border:  blue;
+
+        }
+    </style>
+</head>
+<body>
+    <title> Validation </title>
+    <script>
+        function validate() {
+            sname = document.getElementById("name").value;
+            smobile = document.getElementById("mobile").value;
+            saddress = document.getElementById("addr").value;
+            scity = document.getElementById("city").value;
+            sstate = document.getElementById("state").value;
+            spin = document.getElementById("pin").value;
+            if (sname == "" || smobile == "" || saddress == "" || scity == "" || sstate == "" || spin == "") {
+                alert("Fields should not be empty");
+                return false;
+            }
+            else if (!sname.match(/^[A-Za-z]+(\s{0,1}[a-zA-Z-, ])*$/)) {
+                alert("Name should contain only characters")
+                return false;
+            }
+            else if (!smobile.match(/^\d{10}$/)) {
+                alert("Mobile number Not valid")
+                return false;
+            }
+            else if (!spin.match(/^\d{6}$/)) {
+                alert("Pin number Not valid")
+                return false;
+            }
+            alert("Valid");
+            return false;
+        }
+    </script>
+    <body>
+        <form name="frmStudent">
+            <table align="center" width=300>
+                <tr>
+                    <th colspan=2>Student Registration Form</th>
+                </tr>
+                <tr>
+                    <td>Name of Student</td>
+                    <td><input type=text name=txtSname id=name size=30></td>
+                <tr><br>
+                    <td>Mobile No</td>
+                    <td><input type=text name=txtSmobile id=mobile size=30></td>
+                <tr><br>
+                    <td>Address Line</td>
+                    <td><input type=text name=txtSaddress id=addr size=30></td>
+                <tr><br>
+                    <td>City</td>
+                    <td><input type=text name=txtScity id=city size=30></td>
+                <tr><br>
+                    <td>State</td>
+                    <td><input type=text name=txtSstate id=state size=30></td>
+                <tr><br>
+                    <td>Pincode</td>
+                    <td><input type=text name=txtSpin id=pin size=30></td>
+                <tr><br>
+                    <td><input type=submit value="Submit" onClick="return validate()"></td>
+                    <td><input type=reset value="Reset"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function formSubmit() {
+    document.forms["myForm"].submit();
+}
+</script>
+</head>
+<body>
+
+<h1>HAI</h1>
+
+<form name="myForm" action="/action_page.php" method="get">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <input type="button" onclick="formSubmit()" value="CLICK TO SEE MAGIC!">
+</form>
+</body>
+</html>
