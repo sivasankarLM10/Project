@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>append</title>
+    <style>
+      .css {
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul id="list">
+      <li>Coffee</li>
+      <li>Tea</li>
+    </ul>
+    <button onclick="myfunct()">Append</button>
+    <script>
+      function myfunct() {
+        var node = document.createElement("li");
+        var textnode = document.createTextNode("Water");
+        node.appendChild(textnode);
+        document.getElementById("list").appendChild(node);
+        document.getElementById("list").setAttribute("class", "css");
+      }
+    </script>
+  </body>
+</html>

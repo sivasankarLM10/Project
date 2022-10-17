@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <title>Student Form</title>
+    <script>
+      function validate() {
+        sname = document.getElementById("nm").value;
+
+        smobile = document.getElementById("mb").value;
+        saddress = document.getElementById("add").value;
+        scity = document.getElementById("ct").value;
+        sstate = document.getElementById("st").value;
+        spin = document.getElementById("pin").value;
+        if (
+          sname == "" ||
+          smobile == "" ||
+          saddress == "" ||
+          scity == "" ||
+          sstate == "" ||
+          spin == ""
+        ) {
+          alert("Fields should not be empty");
+          return false;
+        } else if (!sname.match(/^[A-Za-z]+(\s{0,1}[a-zA-Z-, ])*$/)) {
+          alert("Name should contain only characters");
+          return false;
+        } else if (!smobile.match(/^\d{10}$/)) {
+          alert("Mobile number Not valid");
+          return false;
+        } else if (!spin.match(/^\d{6}$/)) {
+          alert("Pin number Not valid");
+          return false;
+        }
+        alert("Valid");
+        return false;
+      }
+      function autoFill() {
+        scity = document.getElementById("ct").value;
+
+        if (scity == "Alappuzha") {
+          document.getElementById("pin").value = "688001";
+        } else if (scity == "kollam") {
+          document.getElementById("pin").value = "699577";
+        } else if (scity == "Trivandrum") {
+          document.getElementById("pin").value = "300050";
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: blue;
+        color: black;
+        padding: 10%;
+        font-size: 40px;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 0 15px;
+        font-size: 20px;
+      }
+
+      th {
+        color: rgb(0, 0, 0);
+      }
+
+      td {
+        width: 150px;
+        text-align: center;
+
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="frmStudent">
+      <table align="center" width="300">
+        <tr>
+          <th colspan="2">Student Registration Form</th>
+        </tr>
+
+        <tr>
+          <td>Name of Student</td>
+          <td>
+            <input
+              type="text"
+              name="txtSname"
+              id="nm"
+              size="30"
+              oninput="{autoFill()}"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td>Mobile No</td>
+          <td><input type="number" name="txtSmobile" id="mb" size="30" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>Address Line</td>
+          <td><input type="text" name="txtSaddress" id="add" size="30" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>City</td>
+          <td><input type="text" name="txtScity" id="ct" size="30" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>State</td>
+          <td><input type="text" name="txtSstate" id="st" size="30" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>Pincode</td>
+          <td><input type="number" name="txtSpin" id="pin" size="30" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>
+            <input type="submit" value="Submit" onClick="return validate()" />
+          </td>
+          <td>
+            <input type="reset" value="Reset" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
