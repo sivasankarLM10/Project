@@ -1,0 +1,9 @@
+	MVI A,0cH
+	MOV B,A
+	MVI C,03H
+	MVI A,00H
+Label1: ADD B
+	DCR C
+	JNZ Label1
+	STA 2001H
+	HLT
